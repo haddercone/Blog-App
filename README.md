@@ -1,2 +1,2 @@
 # Blog.github.io
-/blog application
+blog_app
