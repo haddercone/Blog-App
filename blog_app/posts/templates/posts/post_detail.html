@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block page_content %}
+<br>
+<div class="container">
+        <a href="/"class = "card-link">Go back</a><br><br>
+    <div class="alert alert-primary text-center">
+        <h4>{{ detail.topic }}</h4>
+    </div>
+    <i class="fa fa-pen"></i> {{ detail.name }}, 
+    <i class="far fa-clock"></i> {{ detail.pub_date }}
+    <br><br>
+    <div class="alert alert-secondary">
+        <p>{{ content.content_text }}</p>
+    </div>
+
+</div>
+
+{% endblock %}

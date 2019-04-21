@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block page_content %}
+
+<div class="container">
+        <a href="/admin"class = "card-link">Admin Pannel</a>
+        <br><br>
+        <div class="alert alert-success text-center">
+                <h5>Latest Posts -</h5>
+            </div>
+        
+    <div class="row">
+            {% for details in auther %}
+        <div class="col-sm-6">
+                <div class="card" >
+                        <div class="card-body">
+                          <h5 class="card-title">{{ details.topic }}</h5>
+                          <span class="card-subtitle mb-2 text-muted"> <i class="fa fa-pen"></i> {{ details.name }}<br> 
+                            <i class="far fa-clock"></i> {{ details.pub_date }}</span><br><br>
+                          <p class="card-text">Learn the concepts of {{ details.topic }}</p>
+                          <a href="{% url 'posts:post_detail' details.id %}"class = "card-link">Read More</a>
+                         
+                        </div>
+                    </div><br>
+        </div>
+        {% endfor %}   
+    </div>
+</div>
+
+<div class="container">
+        <div class="alert alert-info text-center">
+                <h5>All Posts -</h5>
+            </div>
+        <div class="row">
+                {% for details in all_auther %}
+            <div class="col-sm-6">
+                    <div class="card" >
+                            <div class="card-body">
+                              <h5 class="card-title">{{ details.topic }}</h5>
+                              <span class="card-subtitle mb-2 text-muted"> <i class="fa fa-pen"></i> {{ full_details.name }}<br> 
+                                <i class="far fa-clock"></i> {{ details.pub_date }}</span><br><br>
+                                <p class="card-text">Learn the concepts of {{ details.topic }}</p>
+                              <a href="{% url 'posts:post_detail' details.id %}"class = "card-link">Read More</a>
+                             
+                            </div>
+                        </div><br>
+            </div>
+            {% endfor %}   
+        </div>
+</div>
+{% endblock %}
